@@ -1,0 +1,28 @@
+<form [formGroup]="form1" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input formControlName="title"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="form1.get('title')?.invalid && form1.get('title')?.touched">
+    <ion-label color="danger">
+      El título es obligatorio y debe tener al menos 3 caracteres..
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">descripción</ion-label>
+    <ion-textarea formControlName="description"></ion-textarea>
+  </ion-item>
+  <ion-item *ngIf="form1.get('description')?.invalid && form1.get('description')?.touched">
+    <ion-label color="danger">
+      La descripción es obligatoria y debe tener al menos 10 caracteres..
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Hecho</ion-label>
+    <ion-checkbox formControlName="done"></ion-checkbox>
+  </ion-item>
+
+  <ion-button expand="block" type="submit" shape="round">Guardar</ion-button>
+</form>
