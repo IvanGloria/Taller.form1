@@ -1,34 +1,34 @@
 <form [formGroup]="form1" (ngSubmit)="onSubmit()">
   <ion-item>
-    <ion-label position="floating">Title</ion-label>
+    <ion-label position="floating">Titulo</ion-label>
     <ion-input formControlName="title"></ion-input>
   </ion-item>
   <ion-item *ngIf="form1.get('title')?.invalid && form1.get('title')?.touched">
     <ion-label color="danger">
-      Title is required and should be at least 3 characters long.
+      El titulo es obligatori y debe tner al menos 3 caracteres.
     </ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Description</ion-label>
+    <ion-label position="floating">Descripcion</ion-label>
     <ion-textarea formControlName="description"></ion-textarea>
   </ion-item>
   <ion-item *ngIf="form1.get('description')?.invalid && form1.get('description')?.touched">
     <ion-label color="danger">
-      Description is required and should be at least 10 characters long.
+      La descripción es obligatoria y debe tener al menos 10 caracteres.
     </ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>Done</ion-label>
+    <ion-label>Hecho</ion-label>
     <ion-checkbox formControlName="done"></ion-checkbox>
   </ion-item>
 
-  <ion-button expand="block" type="submit" shape="round">Save</ion-button>
+  <ion-button expand="block" type="submit" shape="round">Guardar</ion-button>
 </form>
 
 <div *ngIf="savedItems.length > 0">
-  <h2>Saved Items:</h2>
+  <h2>Items Guardados:</h2>
   <ion-list>
     <ion-item *ngFor="let item of savedItems">
       <ion-label>
